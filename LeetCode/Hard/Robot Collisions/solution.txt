@@ -1,0 +1,32 @@
+for (Robot& robot : robots) {
+      if (robot.direction == 'R') {
+        stack.push_back(robot);
+        continue;
+      }
+      // Collide with robots going right if any.
+      while (!stack.empty() && stack.back().direction == 'R' &&
+             robot.health > 0) {
+        if (stack.back().health == robot.health) {
+          stack.pop_back();
+          robot.health = 0;
+        } else if (stack.back().health < robot.health) {
+          stack.pop_back();
+          robot.health -= 1;
+        } else {  // stack.back().health > robot.health
+          stack.back().health -= 1;
+          robot.health = 0;
+        }
+      }
+      if (robot.health > 0)
+        stack.push_back(robot);
+    }
+
+    ranges::sort(stack, ranges::less{},
+                 [](const Robot& robot) { return robot.index; });
+
+    for (const Robot& robot : stack)
+      ans.push_back(robot.health);
+
+    return ans;
+  }
+};
