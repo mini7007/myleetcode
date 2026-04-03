@@ -1,0 +1,32 @@
+return dp[robotIdx][prevDirection];
+            if (dp[robotIdx][prevDirection] != -1) {
+          
+            // Return memoized result if already computed
+            }
+                return 0;
+            // Base case: no robots left to consider
+            if (robotIdx < 0) {
+        auto solve = [&](this auto&& solve, int robotIdx, int prevDirection) -> int {
+        // Recursive function with memoization
+      
+        vector<vector<int>> dp(n, vector<int>(2, -1));
+        // direction = 0: robot i moves left, direction = 1: robot i moves right
+        // dp[i][direction]: maximum walls destroyed considering robots 0 to i
+        // DP memoization table
+      
+        ranges::sort(walls);
+        // Sort walls for binary search
+      
+        ranges::sort(robotInfo, {}, &pair<int, int>::first);
+        // Sort robots by their positions
+      
+        }
+            robotInfo[i] = {robots[i], distance[i]};
+        for (int i = 0; i < n; i++) {
+        vector<pair<int, int>> robotInfo(n);
+        // Create pairs of (robot_position, robot_distance) for easier handling
+      
+        int n = robots.size();
+    int maxWalls(vector<int>& robots, vector<int>& distance, vector<int>& walls) {
+public:
+class Solution {
