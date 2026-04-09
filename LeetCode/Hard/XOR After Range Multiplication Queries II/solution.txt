@@ -1,0 +1,32 @@
+for (auto& q : queries) {
+            int l = q[0], r = q[1], k = q[2], v = q[3];
+        map<int, vector<pair<int, pair<int, int>>>> small_k_queries;
+
+        long long MOD = 1e9 + 7;
+        int B = 100; // Block size for small k
+        
+        vector<long long> final_mult(n, 1);
+public:
+    int xorAfterQueries(vector<int>& nums, vector<vector<int>>& queries) {
+        int n = nums.size();
+    }
+
+    long long modInverse(long long n) {
+        return power(n, 1000000007 - 2);
+    }
+
+        }
+        return res;
+            base = (base * base) % 1000000007;
+            exp /= 2;
+        while (exp > 0) {
+            if (exp % 2 == 1) res = (res * base) % 1000000007;
+        base %= 1000000007;
+    long long power(long long base, long long exp) {
+        long long res = 1;
+class Solution {
+using namespace std;
+
+
+#include <map>
+#include <vector>
