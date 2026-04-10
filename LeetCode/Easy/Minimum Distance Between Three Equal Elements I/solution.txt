@@ -1,0 +1,31 @@
+#include <algorithm>
+#include <vector>
+using namespace std;
+
+class Solution {
+public:
+    int minimumDistance(vector<int>& nums) {
+        int n = nums.size();
+        vector<int> first(n + 1, -1);
+        vector<int> second(n + 1, -1);
+        vector<int> count(n + 1, 0);
+        int answer = 1e9;
+
+        for (int index = 0; index < n; index++) {
+            int value = nums[index];
+            count[value]++;
+
+            if (count[value] == 1) {
+                first[value] = index;
+            } else if (count[value] == 2) {
+                second[value] = index;
+            } else {
+                answer = min(answer, (index - first[value]) * 2);
+                first[value] = second[value];
+                second[value] = index;
+            }
+        }
+
+        return answer == 1e9 ? -1 : answer;
+    }
+};
